@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+.env
+
+# Static files (optional, keep if generated)
+staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db

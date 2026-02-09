@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+  <h1 class="display-4 fw-bold mb-4">Welcome to Resource Portal</h1>
+  <p class="lead  mb-5" id="heroText">
+    Browse, upload, and share study resources across all semesters and branches.
+  </p>
+
+  <div class="d-flex justify-content-center flex-wrap gap-4">
+    <a href="{% url 'resources' %}" class="card text-decoration-none shadow-sm" 
+       style="width: 18rem; border-radius: 1rem; transition: transform 0.2s;">
+      <div class="card-body">
+        <h4 class="card-title mb-2 " >📚 View Resources</h4>
+        <p class="card-text text-muted ">Explore notes, previous year papers, and more.</p>
+      </div>
+    </a>
+
+    <a href="{% url 'upload' %}" class="card text-decoration-none shadow-sm" 
+       style="width: 18rem; border-radius: 1rem; transition: transform 0.2s;">
+      <div class="card-body">
+        <h4 class="card-title mb-2">⬆️ Upload Resource</h4>
+        <p class="card-text text-muted">Contribute by uploading your study materials.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  }
+  #heroText{
+    color: grey;
+  }
+
+</style>
+{% endblock %}

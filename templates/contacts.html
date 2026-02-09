@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+<div class="contacts">
+    <a href="https://github.com/TarushBajpai" target="_blank">
+        <img src="/static/images/githubLogo.jpg" alt="github">
+    </a>
+</div>
+<div class="contacts">
+    <a href="https://www.linkedin.com/in/tarush-bajpai/" target="_blank">
+        <img src="/static/images/LinkedIn_logo.png" alt="linked-in">
+    </a>
+</div>
+<div class="contacts">
+    <a href="https://www.instagram.com/tarushbajpai12/" target="_blank">
+        <img src="/static/images/instaLogo.jpg" alt="insta">
+    </a>
+</div>
+<style>
+.container {
+    /* background:rgb(147, 145, 156); */
+    border-radius: 50px;
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    padding: 20px;        
+}
+
+.contacts img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain; 
+    border-radius: 50%;    
+    margin-left: 60px;
+} 
+</style>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Resources{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Available Resources</h2>
+
+  {% if resources %}
+  <div class="row">
+    {% for resource in resources %}
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ resource.title }}</h5>
+
+          {% if resource.branch %}
+          <p class="card-text"><strong>Branch:</strong> {{ resource.branch }}</p>
+          {% endif %}
+
+          {% if resource.semester %}
+          <p class="card-text"><strong>Semester:</strong> {{ resource.semester }}</p>
+          {% endif %}
+
+          {% if resource.subject %}
+          <p class="card-text"><strong>Subject:</strong> {{ resource.subject }}</p>
+          {% endif %}
+
+          {% if resource.category %}
+          <p class="card-text"><strong>Category:</strong> {{ resource.category }}</p>
+          {% endif %}
+
+          <a href="{{ resource.file.url }}" class="btn btn-primary" download>Download</a>
+          <a href="{% url 'view_resource' resource.id %}" class="btn btn-outline-secondary ms-2">View</a>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-center text-muted">No resources uploaded yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ resource.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h3>{{ resource.title }}</h3>
+    <p><strong>Branch:</strong> {{ resource.branch }}</p>
+    <p><strong>Semester:</strong> {{ resource.semester }}</p>
+    <p><strong>Subject:</strong> {{ resource.subject }}</p>
+    <p><strong>Category:</strong> {{ resource.category }}</p>
+    <a href="{{ resource.file.url }}" class="btn btn-primary" download>Download</a>
+  </div>
+</div>
+{% endblock %}
